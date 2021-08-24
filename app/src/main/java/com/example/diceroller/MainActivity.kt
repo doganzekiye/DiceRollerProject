@@ -34,13 +34,17 @@ class MainActivity : AppCompatActivity() {
     private fun checkLuckyNumber(rolledDice : Int){
         val luckyNumber = 3
         when(rolledDice){
-            luckyNumber -> Toast.makeText(this, "You win!", Toast.LENGTH_SHORT).show()
-            1 -> Toast.makeText(this, "So sorry! You rolled a 1. Try again!", Toast.LENGTH_SHORT).show()
-            2 -> Toast.makeText(this, "Sadly, you rolled a 2. Try again!", Toast.LENGTH_SHORT).show()
-            4 -> Toast.makeText(this, "Unfortunately, you rolled a 4. Try again!", Toast.LENGTH_SHORT).show()
-            5 -> Toast.makeText(this, "Don't cry! You rolled a 5. Try again!", Toast.LENGTH_SHORT).show()
-            6 -> Toast.makeText(this, "Apologies! you rolled a 6. Try again!", Toast.LENGTH_SHORT).show()
+            luckyNumber -> showMessage("You win!")
+            1 -> showMessage("So sorry! You rolled a 1. Try again!")
+            2 -> showMessage("Sadly, you rolled a 2. Try again!")
+            4 -> showMessage("Unfortunately, you rolled a 4. Try again!")
+            5 -> showMessage("Don't cry! You rolled a 5. Try again!")
+            6 -> showMessage("Apologies! you rolled a 6. Try again!")
         }
+    }
+
+    private fun showMessage(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }
 
